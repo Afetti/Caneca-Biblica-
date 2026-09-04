@@ -5,23 +5,26 @@
 <title>Afetti - Mensagem do Dia</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
-body{margin:0;background:#fff8f5;display:flex;justify-content:center;font-family:Arial,sans-serif;overflow:hidden;height:100vh;}
+body{margin:0;background:#fff8f5;display:flex;justify-content:center;font-family:Arial,sans-serif;}
 .bg{position:fixed;inset:0;background:radial-gradient(ellipse at 10% 0%, #f7b9a5 0%, transparent 45%),radial-gradient(ellipse at 90% 100%, #f7b9a5 0%, transparent 45%),#fffaf7;z-index:-1;}
-.container{width:100%;max-width:420px;height:100vh;padding:4px 0 4px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;box-sizing:border-box;}
-.logo{width:132px;height:132px;background:transparent;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:4px;flex-shrink:0;}
-.logo img{width:100%;height:100%;object-fit:contain;border-radius:50%;background:white;display:block;}
-.card{background:white;width:92%;border-radius:22px;box-shadow:0 8px 18px rgba(0,0,0,0.06);margin-top:-12px;padding:18px 12px 8px;text-align:center;flex-shrink:0;}
-.titleWrap{position:relative;border:1.5px solid #d4b368;border-radius:14px;padding:9px 44px;margin:0 2px 6px;}
-.leafL,.leafR{position:absolute;top:50%;width:36px;} .leafL{left:-10px;transform:translateY(-50%);} .leafR{right:-10px;transform:translateY(-50%) scaleX(-1);}
+.container{width:100%;max-width:420px;min-height:100vh;padding:6px 0 6px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;box-sizing:border-box;}
+/* LOGO CORRIGIDO - NÃO PEGA MAIS NO CARD */
+.logo{width:130px;height:130px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:6px;margin-bottom:10px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.08);}
+.logo img{width:92%;height:92%;object-fit:contain;border-radius:50%;display:block;}
+.card{background:white;width:92%;border-radius:22px;box-shadow:0 8px 18px rgba(0,0,0,0.06);margin-top:0;padding:14px 12px 8px;text-align:center;flex-shrink:0;}
+.titleWrap{position:relative;border:1.5px solid #d4b368;border-radius:14px;padding:9px 44px;margin:0 2px 8px;}
+.leafL,.leafR{position:absolute;top:50%;width:36px;}.leafL{left:-10px;transform:translateY(-50%);}.leafR{right:-10px;transform:translateY(-50%) scaleX(-1);}
 .title{font-family:'Cinzel',serif;color:#a67c2e;font-weight:700;font-size:18px;line-height:1.2;margin:0;}
-.bibleWrap{position:relative;width:100%;margin-top:2px;} .bibleWrap img.bible{width:100%;display:block;max-height:38vh;object-fit:contain;}
-.verseOverlay{position:absolute;top:50%;left:68%;transform:translate(-50%,-50%);width:32%;height:75%;display:flex;flex-direction:column;justify-content:center;align-items:center;box-sizing:border-box;padding:0 4px;}
-.verseText{font-family:Georgia,serif;font-size:12px;line-height:1.25;color:#2b1a0e;text-align:center;font-weight:700;}
-.verseRef{display:block;margin-top:5px;font-family:Georgia,serif;font-size:11px;color:#a67c2e;font-weight:800;text-align:center;}
-.btn{margin-top:6px;background:#e68a7f;color:white;border:none;padding:7px 18px;border-radius:18px;font-weight:700;font-size:12.5px;cursor:pointer;}
-.bottomBranches{position:relative;width:100%;height:28px;margin-top:6px;}
-.bottomBranches img{width:38px;position:absolute;top:50%;} .bL{left:18px;transform:translateY(-50%);} .bR{right:18px;transform:translateY(-50%) scaleX(-1);}
-.footer{margin-top:6px;width:92%;background:#f9d9d5;border-radius:20px;padding:7px 10px;display:flex;justify-content:center;align-items:center;gap:6px;font-size:11px;color:#3a2222;flex-shrink:0;}
+/* BIBLIA CORRIGIDA - VERSÍCULO VOLTOU */
+.bibleWrap{position:relative;width:100%;margin-top:4px;display:flex;justify-content:center;}
+.bibleWrap img.bible{width:100%;max-width:100%;display:block;}
+.verseOverlay{position:absolute;top:50%;left:69%;transform:translate(-50%,-50%);width:34%;height:80%;display:flex;flex-direction:column;justify-content:center;align-items:center;box-sizing:border-box;padding:0 6px;z-index:2;}
+.verseText{font-family:Georgia,serif;font-size:12.5px;line-height:1.3;color:#2b1a0e;text-align:center;font-weight:700;text-shadow:0 1px 2px rgba(255,255,255,0.8);}
+.verseRef{display:block;margin-top:6px;font-family:Georgia,serif;font-size:11px;color:#a67c2e;font-weight:800;text-align:center;}
+.btn{margin-top:8px;background:#e68a7f;color:white;border:none;padding:7px 18px;border-radius:18px;font-weight:700;font-size:12.5px;cursor:pointer;}
+.bottomBranches{position:relative;width:100%;height:28px;margin-top:8px;}
+.bottomBranches img{width:38px;position:absolute;top:50%;}.bL{left:18px;transform:translateY(-50%);}.bR{right:18px;transform:translateY(-50%) scaleX(-1);}
+.footer{margin-top:8px;width:92%;background:#f9d9d5;border-radius:20px;padding:7px 10px;display:flex;justify-content:center;align-items:center;gap:6px;font-size:11px;color:#3a2222;flex-shrink:0;}
 .footer a{color:#3a2222;text-decoration:none;font-weight:700;display:flex;align-items:center;gap:5px;}
 .footer img.icon{width:19px;height:19px;object-fit:contain;display:block;}
 </style>
@@ -32,7 +35,13 @@ body{margin:0;background:#fff8f5;display:flex;justify-content:center;font-family
 <div class="logo"><img src="logo.png"></div>
 <div class="card">
 <div class="titleWrap"><img class="leafL" src="ramo_dourado.png"><img class="leafR" src="ramo_dourado.png"><div class="title">• BOM DIA •<br>MENSAGEM DE HOJE</div></div>
-<div class="bibleWrap"><img class="bible" src="biblia.png"><div class="verseOverlay"><div class="verseText" id="vText"></div><span class="verseRef" id="vRef"></span></div></div>
+<div class="bibleWrap">
+<img class="bible" src="biblia.png">
+<div class="verseOverlay">
+<div class="verseText" id="vText">Carregando...</div>
+<span class="verseRef" id="vRef"></span>
+</div>
+</div>
 <button class="btn" onclick="shareVerse()">Compartilhar ❤️</button>
 <div class="bottomBranches"><img class="bL" src="ramo_dourado.png"><img class="bR" src="ramo_dourado.png"></div>
 </div>
@@ -46,12 +55,28 @@ body{margin:0;background:#fff8f5;display:flex;justify-content:center;font-family
 const verses=[
 {t:"Confie no Senhor de todo o seu coração",r:"Provérbios 3:5"},{t:"O Senhor é o meu pastor; de nada terei falta",r:"Salmos 23:1"},{t:"Tudo posso naquele que me fortalece",r:"Filipenses 4:13"},{t:"Não tema, pois estou com você",r:"Isaías 41:10"},{t:"Deus é o nosso refúgio e fortaleza",r:"Salmos 46:1"},{t:"Porque Deus amou o mundo de tal maneira",r:"João 3:16"},{t:"O choro pode durar uma noite, mas a alegria vem pela manhã",r:"Salmos 30:5"},{t:"Entrega o teu caminho ao Senhor, confia nele",r:"Salmos 37:5"},{t:"O Senhor é minha luz e minha salvação",r:"Salmos 27:1"},{t:"Sejam fortes e corajosos",r:"Josué 1:9"},
 {t:"O amor é paciente, o amor é bondoso",r:"1 Coríntios 13:4"},{t:"Alegrem-se na esperança, sejam pacientes na tribulação",r:"Romanos 12:12"},{t:"O Senhor te abençoe e te guarde",r:"Números 6:24"},{t:"Busquem primeiro o Reino de Deus",r:"Mateus 6:33"},{t:"Vinde a mim todos os que estão cansados",r:"Mateus 11:28"},{t:"A paz de Deus guardará o coração de vocês",r:"Filipenses 4:7"},{t:"Tudo coopera para o bem daqueles que amam a Deus",r:"Romanos 8:28"},{t:"O Senhor é bom, um refúgio em tempos de angústia",r:"Naum 1:7"},{t:"Lancem sobre Ele toda a sua ansiedade",r:"1 Pedro 5:7"},{t:"O meu socorro vem do Senhor",r:"Salmos 121:2"},
-{t:"Deus é amor",r:"1 João 4:8"},{t:"A fé é a certeza daquilo que esperamos",r:"Hebreus 11:1"},{t:"O Senhor está perto dos que têm o coração quebrantado",r:"Salmos 34:18"},{t:"Seja a vossa moderação conhecida",r:"Filipenses 4:5"},{t:"O Senhor é misericordioso e compassivo",r:"Salmos 103:8"},{t:"Clame a mim e eu responderei",r:"Jeremias 33:3"},{t:"A palavra de Deus é lâmpada para os meus pés",r:"Salmos 119:105"},{t:"Bem-aventurados os pacificadores",r:"Mateus 5:9"},{t:"O fruto do Espírito é amor, alegria e paz",r:"Gálatas 5:22"},{t:"Alegrai-vos sempre no Senhor",r:"Filipenses 4:4"},
-{t:"O Senhor renova as suas misericórdias cada manhã",r:"Lamentações 3:23"},{t:"Nada poderá nos separar do amor de Deus",r:"Romanos 8:39"},{t:"O Senhor é fiel e os fortalecerá",r:"2 Tessalonicenses 3:3"},{t:"Se Deus é por nós, quem será contra nós?",r:"Romanos 8:31"},{t:"Aquele que habita no esconderijo do Altíssimo",r:"Salmos 91:1"},{t:"Entreguem suas preocupações ao Senhor",r:"Salmos 55:22"},{t:"A bondade do Senhor dura para sempre",r:"Salmos 136:1"},{t:"O Senhor é a minha força e o meu escudo",r:"Salmos 28:7"},{t:"Grande é a sua fidelidade",r:"Lamentações 3:23"},{t:"O Senhor cumprirá o seu propósito",r:"Salmos 138:8"},
-{t:"O amor nunca falha",r:"1 Coríntios 13:8"},{t:"Sejam bondosos e compassivos uns para com os outros",r:"Efésios 4:32"},{t:"A humildade precede a honra",r:"Provérbios 15:33"},{t:"O coração alegre aformoseia o rosto",r:"Provérbios 15:13"},{t:"Em tudo dai graças",r:"1 Tessalonicenses 5:18"},{t:"O Senhor conhece os que confiam nele",r:"Naum 1:7"},{t:"A esperança não traz confusão",r:"Romanos 5:5"},{t:"Alegrem-se com os que se alegram",r:"Romanos 12:15"},{t:"O Senhor é justo em todos os seus caminhos",r:"Salmos 145:17"},{t:"Confia no Senhor e faze o bem",r:"Salmos 37:3"},
-{t:"O Senhor dá força ao seu povo",r:"Salmos 29:11"},{t:"Bendize, ó minha alma, ao Senhor",r:"Salmos 103:1"},{t:"O Senhor é compassivo e misericordioso",r:"Tiago 5:11"},{t:"Apeguemo-nos com firmeza à esperança",r:"Hebreus 10:23"},{t:"O Senhor está comigo, não temerei",r:"Salmos 118:6"},{t:"A tua palavra é verdade",r:"João 17:17"},{t:"O Senhor é Rei para sempre",r:"Salmos 10:16"},{t:"Cantai ao Senhor um cântico novo",r:"Salmos 96:1"},{t:"O Senhor faz justiça aos oprimidos",r:"Salmos 146:7"},{t:"Se confessarmos os nossos pecados, Ele é fiel",r:"1 João 1:9"},
-{t:"O Senhor é bom para com todos",r:"Salmos 145:9"},{t:"Aquele que pede, recebe",r:"Mateus 7:8"},{t:"Buscai e achareis",r:"Mateus 7:7"},{t:"O meu jugo é suave e meu fardo é leve",r:"Mateus 11:30"},{t:"Eu sou o caminho, a verdade e a vida",r:"João 14:6"},{t:"Eu sou a luz do mundo",r:"João 8:12"},{t:"Eu sou o pão da vida",r:"João 6:35"},{t:"Eu sou a porta",r:"João 10:9"},{t:"Eu sou o bom pastor",r:"João 10:11"},{t:"Permaneçam em mim",r:"João 15:4"},
-{t:"O Senhor é a minha rocha",r:"Salmos 18:2"},{t:"Cantarei ao Senhor porquanto me tem feito muito bem",r:"Salmos 13:6"},{t:"A lei do Senhor é perfeita",r:"Salmos 19:7"},{t:"Os céus declaram a glória de Deus",r:"Salmos 19:1"},{t:"O Senhor é meu refúgio",r:"Salmos 31:20"},{t:"Provai e vede que o Senhor é bom",r:"Salmos 34:8"},{t:"Muitas são as aflições do justo, mas o Senhor o livra",r:"Salmos 34:19"},{t:"A misericórdia do Senhor é desde a eternidade",r:"Salmos 103:17"},{t:"Como um pai se compadece de seus filhos",r:"Salmos 103:13"},{t:"O Senhor reina",r:"Salmos 93:1"},
-{t:"Louvai ao Senhor, porque é bom",r:"Salmos 106:1"},{t:"Dêem graças ao Senhor porque Ele é bom",r:"Salmos 107:1"},{t:"O Senhor é grande e mui digno de louvor",r:"Salmos 145:3"},{t:"Perto está o Senhor de todos os que o invocam",r:"Salmos 145:18"},{t:"O Senhor sustenta a todos os que caem",r:"Salmos 145:14"},{t:"Louvem o nome do Senhor",r:"Salmos 148:13"},{t:"Tudo quanto tem fôlego louve ao Senhor",r:"Salmos 150:6"},{t:"O temor do Senhor é o princípio da sabedoria",r:"Provérbios 9:10"},{t:"O coração do homem planeja o seu caminho",r:"Provérbios 16:9"},{t:"A resposta branda desvia o furor",r:"Provérbios 15:1"},
-{t:"O nome do Senhor é torre forte",r:"Provérbios 18:10"},{t:"A amizade é para todas as horas",r:"Provérbios 17:17"},{t:"O generoso prosperará",r:"Provérbios 11:25"},{t:"Quem confia no Senhor está seguro",r:"Provérbios 29:25"},{t:"Ensina a criança no caminho em que deve andar",r:"Provérbios 22:6"},{t:"O Senhor corrige a quem ama",r:"Provérbios 3:12"},{t:"Melhor é o pouco com justiça",r:"Provérbios 16:8"},{t:"O orgulho precede a destruição",r:"Provérbios 16:18"},{t:"As palavras agradáveis são como favo de mel",r:"Provérbios 16:24"},{t:"O homem paciente dá prova de grande entendimento",r:"Provérbios 14:29"},
-{t:"Há tempo para todo propósito debaixo do céu",r:"Eclesiastes 3:1"},{t:"Tudo fez Deus formoso no seu devido tempo",r:"Eclesiastes 3:11"},{t:"Melhor é serem dois do que um",r:"Eclesiastes 4:9"},{t:"Lança o teu pão sobre as águas",r:"Eclesiastes 11:1"},{t:"
+{t:"Deus é amor",r:"1 João 4:8"},{t:"A fé é a certeza daquilo que esperamos",r:"Hebreus 11:1"},{t:"O Senhor está perto dos que têm o coração quebrantado",r:"Salmos 34:18"},{t:"Clame a mim e eu responderei",r:"Jeremias 33:3"},{t:"A palavra de Deus é lâmpada para os meus pés",r:"Salmos 119:105"},{t:"Bem-aventurados os pacificadores",r:"Mateus 5:9"},{t:"O fruto do Espírito é amor, alegria e paz",r:"Gálatas 5:22"},{t:"Alegrai-vos sempre no Senhor",r:"Filipenses 4:4"},{t:"O Senhor renova as suas misericórdias cada manhã",r:"Lamentações 3:23"},{t:"Nada poderá nos separar do amor de Deus",r:"Romanos 8:39"},
+{t:"O Senhor é fiel e os fortalecerá",r:"2 Tessalonicenses 3:3"},{t:"Se Deus é por nós, quem será contra nós?",r:"Romanos 8:31"},{t:"Aquele que habita no esconderijo do Altíssimo",r:"Salmos 91:1"},{t:"A bondade do Senhor dura para sempre",r:"Salmos 136:1"},{t:"O Senhor é a minha força e o meu escudo",r:"Salmos 28:7"},{t:"O amor nunca falha",r:"1 Coríntios 13:8"},{t:"Sejam bondosos e compassivos",r:"Efésios 4:32"},{t:"Em tudo dai graças",r:"1 Tessalonicenses 5:18"},{t:"O coração alegre aformoseia o rosto",r:"Provérbios 15:13"},{t:"A esperança não traz confusão",r:"Romanos 5:5"},
+{t:"O Senhor dá força ao seu povo",r:"Salmos 29:11"},{t:"Bendize, ó minha alma, ao Senhor",r:"Salmos 103:1"},{t:"Apeguemo-nos com firmeza à esperança",r:"Hebreus 10:23"},{t:"O Senhor está comigo, não temerei",r:"Salmos 118:6"},{t:"O Senhor é Rei para sempre",r:"Salmos 10:16"},{t:"Cantai ao Senhor um cântico novo",r:"Salmos 96:1"},{t:"Se confessarmos os nossos pecados, Ele é fiel",r:"1 João 1:9"},{t:"Aquele que pede, recebe",r:"Mateus 7:8"},{t:"Buscai e achareis",r:"Mateus 7:7"},{t:"Eu sou o caminho, a verdade e a vida",r:"João 14:6"},
+{t:"Eu sou a luz do mundo",r:"João 8:12"},{t:"Permaneçam em mim",r:"João 15:4"},{t:"O Senhor é a minha rocha",r:"Salmos 18:2"},{t:"Provai e vede que o Senhor é bom",r:"Salmos 34:8"},{t:"Muitas são as aflições do justo, mas o Senhor o livra",r:"Salmos 34:19"},{t:"Como um pai se compadece de seus filhos",r:"Salmos 103:13"},{t:"O Senhor reina",r:"Salmos 93:1"},{t:"Dêem graças ao Senhor porque Ele é bom",r:"Salmos 107:1"},{t:"Perto está o Senhor de todos os que o invocam",r:"Salmos 145:18"},{t:"O Senhor sustenta a todos os que caem",r:"Salmos 145:14"},
+{t:"Tudo quanto tem fôlego louve ao Senhor",r:"Salmos 150:6"},{t:"O temor do Senhor é o princípio da sabedoria",r:"Provérbios 9:10"},{t:"O coração do homem planeja o seu caminho",r:"Provérbios 16:9"},{t:"A resposta branda desvia o furor",r:"Provérbios 15:1"},{t:"O nome do Senhor é torre forte",r:"Provérbios 18:10"},{t:"O generoso prosperará",r:"Provérbios 11:25"},{t:"Ensina a criança no caminho em que deve andar",r:"Provérbios 22:6"},{t:"Há tempo para todo propósito debaixo do céu",r:"Eclesiastes 3:1"},{t:"Tudo fez Deus formoso no seu devido tempo",r:"Eclesiastes 3:11"},{t:"Melhor é serem dois do que um",r:"Eclesiastes 4:9"},
+{t:"Lembra-te do teu Criador",r:"Eclesiastes 12:1"},{t:"Os que esperam no Senhor renovarão as suas forças",r:"Isaías 40:31"},{t:"Quando passares pelas águas estarei contigo",r:"Isaías 43:2"},{t:"Bendito o homem que confia no Senhor",r:"Jeremias 17:7"},{t:"Eu sei os planos que tenho para vocês",r:"Jeremias 29:11"},{t:"Clama a mim e responder-te-ei",r:"Jeremias 33:3"},{t:"Bom é aguardar a salvação do Senhor",r:"Lamentações 3:26"},{t:"O justo viverá pela fé",r:"Habacuque 2:4"},{t:"O Senhor teu Deus está no meio de ti",r:"Sofonias 3:17"},{t:"Vós sois a luz do mundo",r:"Mateus 5:14"},
+{t:"A minha paz vos dou",r:"João 14:27"},{t:"No mundo tereis aflições, mas tende bom ânimo",r:"João 16:33"},{t:"Conhecereis a verdade e a verdade vos libertará",r:"João 8:32"},{t:"Nós amamos porque Ele nos amou primeiro",r:"1 João 4:19"},{t:"Se alguém está em Cristo é nova criatura",r:"2 Coríntios 5:17"},{t:"Já não sou eu quem vive, mas Cristo vive em mim",r:"Gálatas 2:20"},{t:"Revesti-vos de toda a armadura de Deus",r:"Efésios 6:11"},{t:"Posso todas as coisas naquele que me fortalece",r:"Filipenses 4:13"},{t:"O meu Deus suprirá todas as necessidades",r:"Filipenses 4:19"},{t:"Orem continuamente",r:"1 Tessalonicenses 5:17"},
+{t:"Deem graças em todas as circunstâncias",r:"1 Tessalonicenses 5:18"},{t:"A palavra de Deus é viva e eficaz",r:"Hebreus 4:12"},{t:"Sem fé é impossível agradar a Deus",r:"Hebreus 11:6"},{t:"Jesus Cristo é o mesmo ontem, hoje e para sempre",r:"Hebreus 13:8"},{t:"A oração do justo é poderosa",r:"Tiago 5:16"},{t:"Lancem sobre Ele toda a sua ansiedade",r:"1 Pedro 5:7"},{t:"Maior é o que está em vocês",r:"1 João 4:4"},{t:"O amor cobre multidão de pecados",r:"1 Pedro 4:8"},{t:"O Senhor pelejará por vós",r:"Êxodo 14:14"},{t:"Eu sou o Senhor que vos sara",r:"Êxodo 15:26"},
+{t:"Honra teu pai e tua mãe",r:"Êxodo 20:12"},{t:"Até aqui nos ajudou o Senhor",r:"1 Samuel 7:12"},{t:"O Senhor não vê como vê o homem",r:"1 Samuel 16:7"},{t:"O Senhor é bom e a sua misericórdia dura para sempre",r:"Salmos 100:5"},{t:"Servi ao Senhor com alegria",r:"Salmos 100:2"},{t:"O Senhor é quem te guarda",r:"Salmos 121:5"},{t:"Elevo os olhos para os montes",r:"Salmos 121:1"},{t:"O Senhor tem feito grandes coisas por nós",r:"Salmos 126:3"},{t:"Se o Senhor não edificar a casa",r:"Salmos 127:1"},{t:"O Senhor está à tua direita",r:"Salmos 121:5"},
+{t:"Buscai ao Senhor e a sua força",r:"1 Crônicas 16:11"},{t:"O Senhor é a minha força e meu cântico",r:"Isaías 12:2"},{t:"Tu conservarás em paz aquele cuja mente está firme",r:"Isaías 26:3"},{t:"Ele dá força ao cansado",r:"Isaías 40:29"},{t:"Não temas, porque eu sou contigo",r:"Isaías 41:10"},{t:"Eu te tomo pela mão direita",r:"Isaías 41:13"},{t:"O Senhor te guiará continuamente",r:"Isaías 58:11"},{t:"Levanta-te e resplandece",r:"Isaías 60:1"}
+];
+function getDay(){const n=new Date();const s=new Date(n.getFullYear(),0,0);return Math.floor((n-s)/(1000*60*60*24));}
+function load(){
+try{
+const idx=getDay()%verses.length;
+const v=verses[idx];
+document.getElementById('vText').innerText=v.t+".";
+document.getElementById('vRef').innerText="- "+v.r;
+}catch(e){document.getElementById('vText').innerText="O Senhor é o meu pastor; de nada terei falta.";document.getElementById('vRef').innerText="- Salmos 23:1";}
+}
+function shareVerse(){const t=document.getElementById('vText').innerText+" "+document.getElementById('vRef').innerText;if(navigator.share){navigator.share({text:t});}else{navigator.clipboard.writeText(t);alert('Copiado!');}}
+load();
+</script>
+</body>
+</html>
