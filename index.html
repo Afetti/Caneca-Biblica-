@@ -6,26 +6,28 @@
 <title>Afetti - Mensagem do Dia</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
-body{margin:0;background:#fff8f5;min-height:100vh;display:flex;justify-content:center;font-family:Arial,sans-serif;}
-.bg{position:fixed;inset:0;background:radial-gradient(ellipse at 10% 0%, #f7b9a5 0%, transparent 48%),radial-gradient(ellipse at 90% 100%, #f7b9a5 0%, transparent 55%),#fffaf7;z-index:-1;}
-.container{width:100%;max-width:520px;padding:0 0 30px;display:flex;flex-direction:column;align-items:center;}
-.logo{margin-top:12px;width:180px;height:180px;background:white;border-radius:50%;box-shadow:0 10px 24px rgba(0,0,0,0.14);border:5px solid white;z-index:10;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.logo img{width:96%;height:auto;}
-.card{background:white;width:93%;border-radius:28px;box-shadow:0 14px 36px rgba(0,0,0,0.1);margin-top:-42px;padding:58px 14px 18px;text-align:center;}
-.titleWrap{position:relative;border:1.6px solid #d4b368;border-radius:18px;padding:18px 50px;margin:0 4px 14px;}
-.leafL{position:absolute;left:-18px;top:50%;transform:translateY(-50%);width:56px;}
-.leafR{position:absolute;right:-18px;top:50%;transform:translateY(-50%) scaleX(-1);width:56px;}
-.title{font-family:'Cinzel',serif;color:#a67c2e;font-weight:700;font-size:26px;line-height:1.22;margin:0;}
-.bibleWrap{position:relative;width:100%;margin-top:10px;}
+body{margin:0;background:#fff8f5;min-height:100vh;display:flex;justify-content:center;font-family:Arial,sans-serif;overflow-x:hidden;}
+.bg{position:fixed;inset:0;background:radial-gradient(ellipse at 10% 0%, #f7b9a5 0%, transparent 45%),radial-gradient(ellipse at 90% 100%, #f7b9a5 0%, transparent 45%),#fffaf7;z-index:-1;}
+.container{width:100%;max-width:420px;min-height:100vh;padding:6px 0 8px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;box-sizing:border-box;}
+/* LOGO REDONDO SEM CORTE E SEM SOMBRA */
+.logo{width:148px;height:148px;background:transparent;border-radius:50%;border:none;box-shadow:none;overflow:visible;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:8px;}
+.logo img{width:100%;height:100%;object-fit:contain;border-radius:50%;display:block;background:white;}
+.card{background:white;width:92%;border-radius:22px;box-shadow:0 8px 20px rgba(0,0,0,0.06);margin-top:-18px;padding:30px 12px 10px;text-align:center;position:relative;}
+.titleWrap{position:relative;border:1.4px solid #d4b368;border-radius:14px;padding:12px 42px;margin:0 2px 8px;}
+.leafL,.leafR{position:absolute;top:50%;width:42px;}
+.leafL{left:-14px;transform:translateY(-50%);}.leafR{right:-14px;transform:translateY(-50%) scaleX(-1);}
+.title{font-family:'Cinzel',serif;color:#a67c2e;font-weight:700;font-size:20px;line-height:1.2;margin:0;}
+.bibleWrap{position:relative;width:100%;margin-top:6px;}
 .bibleWrap img.bible{width:100%;display:block;}
-.verseOverlay{position:absolute;top:2%;left:51%;width:44%;height:90%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:12px;box-sizing:border-box;}
-.verse{font-family:Georgia,serif;font-size:15px;line-height:1.4;color:#23180e;text-align:center;font-weight:700;}
-.btn{margin-top:14px;background:#e68a7f;color:white;border:none;padding:12px 28px;border-radius:22px;font-weight:700;cursor:pointer;}
-.goldBottom{width:90%;margin:16px auto 0;display:block;}
-.footer{margin-top:20px;width:93%;background:#f9d9d5;border-radius:22px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#5a3a3a;box-sizing:border-box;}
-.footer a{color:#5a3a3a;text-decoration:none;font-weight:800;display:flex;align-items:center;gap:6px;}
-.iconIg{width:28px;height:28px;border-radius:8px;background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);display:flex;align-items:center;justify-content:center;color:white;}
-.iconWa{width:28px;height:28px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;color:white;}
+.verseOverlay{position:absolute;top:5%;left:53%;width:36%;height:82%;display:flex;justify-content:center;align-items:center;padding:8px 14px 8px 6px;box-sizing:border-box;}
+.verse{font-family:Georgia,serif;font-size:12.5px;line-height:1.32;color:#23180e;text-align:center;font-weight:700;word-break:break-word;}
+.btn{margin-top:8px;background:#e68a7f;color:white;border:none;padding:8px 20px;border-radius:18px;font-weight:700;font-size:13px;cursor:pointer;}
+.bottomWrap{position:relative;width:100%;height:36px;margin-top:10px;display:flex;justify-content:center;align-items:center;}
+.bottomWrap img{width:52px;position:absolute;}
+.bottomWrap.bLeft{left:18%;transform:translateY(-50%);top:50%;}
+.bottomWrap.bRight{right:18%;transform:translateY(-50%) scaleX(-1);top:50%;}
+.footer{margin-top:8px;width:92%;background:#f9d9d5;border-radius:18px;padding:8px 12px;display:flex;justify-content:center;align-items:center;gap:10px;font-size:11px;color:#5a3a3a;box-sizing:border-box;}
+.footer a{color:#5a3a3a;text-decoration:none;font-weight:700;display:flex;align-items:center;gap:4px;}
 </style>
 </head>
 <body>
@@ -34,8 +36,7 @@ body{margin:0;background:#fff8f5;min-height:100vh;display:flex;justify-content:c
 <div class="logo"><img src="logo.png" onerror="this.src='logo.jpg'" alt="Afetti"></div>
 <div class="card">
 <div class="titleWrap">
-<img class="leafL" src="ramo_dourado.png">
-<img class="leafR" src="ramo_dourado.png">
+<img class="leafL" src="ramo_dourado.png"><img class="leafR" src="ramo_dourado.png">
 <div class="title">• BOM DIA •<br>MENSAGEM DE HOJE</div>
 </div>
 <div class="bibleWrap">
@@ -43,15 +44,18 @@ body{margin:0;background:#fff8f5;min-height:100vh;display:flex;justify-content:c
 <div class="verseOverlay"><div class="verse" id="verse"></div></div>
 </div>
 <button class="btn" onclick="shareVerse()">Compartilhar ❤️</button>
-<img class="goldBottom" src="ramo_dourado_baixo.png">
+<div class="bottomWrap">
+<img class="bLeft" src="ramo_dourado.png"><img class="bRight" src="ramo_dourado.png">
+</div>
 </div>
 <div class="footer">
-<a href="https://instagram.com/afetti.ateliecriatividadedeamor" target="_blank"><span class="iconIg">📷</span> @afetti.ateliecriatividadedeamor</a>
-<a href="https://wa.me/5551995421753" target="_blank"><span class="iconWa">📞</span> 51 995421753</a>
+<a href="https://instagram.com/afetti.ateliecriatividadedeamor" target="_blank">📷 @afetti.ateliecriatividadedeamor</a>
+<span>|</span>
+<a href="https://wa.me/5551995421753" target="_blank">📞 51 995421753</a>
 </div>
 </div>
 <script>
-const verses=["Consagre ao Senhor tudo o que você faz, e os seus planos serão bem-sucedidos. - Provérbios 16:3","O Senhor é o meu pastor; de nada terei falta. - Salmos 23:1","Não andem ansiosos por coisa alguma. - Filipenses 4:6-7","Porque sou eu que conheço os planos que tenho para vocês. - Jeremias 29:11","Não tema, pois estou com você. - Isaías 41:10","Deus é o nosso refúgio e fortaleza. - Salmos 46:1","Deus age em todas as coisas para o bem. - Romanos 8:28","Confie no Senhor de todo o seu coração. - Provérbios 3:5","Porque Deus amou o mundo. - João 3:16","Tudo posso naquele que me fortalece. - Filipenses 4:13","Seja forte e corajoso! - Josué 1:9","O Senhor é a minha luz e salvação. - Salmos 27:1","Aqueles que esperam no Senhor renovarão as forças. - Isaías 40:31","Venham a mim, todos que estão cansados. - Mateus 11:28","Este é o dia que o Senhor fez. - Salmos 118:24","Façam tudo com amor. - 1 Coríntios 16:14","Clame a mim e eu responderei. - Jeremias 33:3","Deleite-se no Senhor. - Salmos 37:4","Aquele que habita no abrigo do Altíssimo. - Salmos 91:1","Meu Deus suprirá todas as necessidades. - Filipenses 4:19"];
+const verses=["Consagre ao Senhor tudo o que você faz, e os seus planos serão bem-sucedidos. - Provérbios 16:3","O Senhor é meu pastor; de nada terei falta. - Salmos 23:1","Não andem ansiosos por coisa alguma. - Filipenses 4:6-7","Porque sou eu que conheço os planos que tenho para vocês. - Jeremias 29:11","Não tema, pois estou com você. - Isaías 41:10","Deus é o nosso refúgio e fortaleza. - Salmos 46:1","Sabemos que Deus age para o bem. - Romanos 8:28","Confie no Senhor de todo o coração. - Provérbios 3:5","Deus amou o mundo. - João 3:16","Tudo posso naquele que me fortalece. - Filipenses 4:13","Seja forte e corajoso! - Josué 1:9","O Senhor é minha luz. - Salmos 27:1","Renovarão as forças. - Isaías 40:31","Venham a mim, todos cansados. - Mateus 11:28","Este é o dia que o Senhor fez. - Salmos 118:24","Façam tudo com amor. - 1 Coríntios 16:14","Clame a mim e responderei. - Jeremias 33:3","Deleite-se no Senhor. - Salmos 37:4","Aquele que habita no abrigo. - Salmos 91:1","Meu Deus suprirá tudo. - Filipenses 4:19"];
 function getDay(){const n=new Date();const s=new Date(n.getFullYear(),0,0);return Math.floor((n-s)/(1000*60*60*24));}
 function load(){const idx=getDay()%verses.length;document.getElementById('verse').innerHTML=verses[idx];}
 function shareVerse(){const t=document.getElementById('verse').innerText;if(navigator.share)navigator.share({title:'Afetti',text:t});else{navigator.clipboard.writeText(t);alert('Copiado!');}}
