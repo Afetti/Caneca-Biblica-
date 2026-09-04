@@ -5,26 +5,25 @@
 <title>Afetti - Mensagem do Dia</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
-body{margin:0;background:#fff8f5;display:flex;justify-content:center;font-family:Arial,sans-serif;overflow-x:hidden;}
+body{margin:0;background:#fff8f5;display:flex;justify-content:center;font-family:Arial,sans-serif;overflow:hidden;height:100vh;}
 .bg{position:fixed;inset:0;background:radial-gradient(ellipse at 10% 0%, #f7b9a5 0%, transparent 45%),radial-gradient(ellipse at 90% 100%, #f7b9a5 0%, transparent 45%),#fffaf7;z-index:-1;}
-.container{width:100%;max-width:420px;min-height:100vh;padding:6px 0 8px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;box-sizing:border-box;}
-.logo{width:148px;height:148px;background:transparent;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:8px;}
+.container{width:100%;max-width:420px;height:100vh;padding:4px 0 4px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;box-sizing:border-box;}
+.logo{width:132px;height:132px;background:transparent;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:4px;flex-shrink:0;}
 .logo img{width:100%;height:100%;object-fit:contain;border-radius:50%;background:white;display:block;}
-.card{background:white;width:92%;border-radius:22px;box-shadow:0 8px 18px rgba(0,0,0,0.06);margin-top:-16px;padding:26px 12px 10px;text-align:center;}
-.titleWrap{position:relative;border:1.5px solid #d4b368;border-radius:14px;padding:11px 44px;margin:0 2px 8px;}
-.leafL,.leafR{position:absolute;top:50%;width:40px;} .leafL{left:-12px;transform:translateY(-50%);} .leafR{right:-12px;transform:translateY(-50%) scaleX(-1);}
-.title{font-family:'Cinzel',serif;color:#a67c2e;font-weight:700;font-size:19px;line-height:1.2;margin:0;}
-.bibleWrap{position:relative;width:100%;margin-top:4px;} .bibleWrap img.bible{width:100%;display:block;}
-/* VERSÍCULO 100% NA PÁGINA DIREITA E CENTRALIZADO */
-.verseOverlay{position:absolute;top:50%;left:68%;transform:translate(-50%,-50%);width:32%;height:75%;display:flex;flex-direction:column;justify-content:center;align-items:center;box-sizing:border-box;padding:0 6px;}
-.verseText{font-family:Georgia,serif;font-size:12.5px;line-height:1.3;color:#2b1a0e;text-align:center;font-weight:700;}
-.verseRef{display:block;margin-top:6px;font-family:Georgia,serif;font-size:12px;color:#a67c2e;font-weight:800;text-align:center;}
-.btn{margin-top:8px;background:#e68a7f;color:white;border:none;padding:8px 20px;border-radius:18px;font-weight:700;font-size:13px;cursor:pointer;}
-.bottomBranches{position:relative;width:100%;height:38px;margin-top:10px;}
-.bottomBranches img{width:44px;position:absolute;top:50%;} .bL{left:20px;transform:translateY(-50%);} .bR{right:20px;transform:translateY(-50%) scaleX(-1);}
-.footer{margin-top:10px;width:92%;background:#f9d9d5;border-radius:20px;padding:8px 10px;display:flex;justify-content:center;align-items:center;gap:6px;font-size:11px;color:#3a2222;}
+.card{background:white;width:92%;border-radius:22px;box-shadow:0 8px 18px rgba(0,0,0,0.06);margin-top:-12px;padding:18px 12px 8px;text-align:center;flex-shrink:0;}
+.titleWrap{position:relative;border:1.5px solid #d4b368;border-radius:14px;padding:9px 44px;margin:0 2px 6px;}
+.leafL,.leafR{position:absolute;top:50%;width:36px;} .leafL{left:-10px;transform:translateY(-50%);} .leafR{right:-10px;transform:translateY(-50%) scaleX(-1);}
+.title{font-family:'Cinzel',serif;color:#a67c2e;font-weight:700;font-size:18px;line-height:1.2;margin:0;}
+.bibleWrap{position:relative;width:100%;margin-top:2px;} .bibleWrap img.bible{width:100%;display:block;max-height:38vh;object-fit:contain;}
+.verseOverlay{position:absolute;top:50%;left:68%;transform:translate(-50%,-50%);width:32%;height:75%;display:flex;flex-direction:column;justify-content:center;align-items:center;box-sizing:border-box;padding:0 4px;}
+.verseText{font-family:Georgia,serif;font-size:12px;line-height:1.25;color:#2b1a0e;text-align:center;font-weight:700;}
+.verseRef{display:block;margin-top:5px;font-family:Georgia,serif;font-size:11px;color:#a67c2e;font-weight:800;text-align:center;}
+.btn{margin-top:6px;background:#e68a7f;color:white;border:none;padding:7px 18px;border-radius:18px;font-weight:700;font-size:12.5px;cursor:pointer;}
+.bottomBranches{position:relative;width:100%;height:28px;margin-top:6px;}
+.bottomBranches img{width:38px;position:absolute;top:50%;} .bL{left:18px;transform:translateY(-50%);} .bR{right:18px;transform:translateY(-50%) scaleX(-1);}
+.footer{margin-top:6px;width:92%;background:#f9d9d5;border-radius:20px;padding:7px 10px;display:flex;justify-content:center;align-items:center;gap:6px;font-size:11px;color:#3a2222;flex-shrink:0;}
 .footer a{color:#3a2222;text-decoration:none;font-weight:700;display:flex;align-items:center;gap:5px;}
-.footer img.icon{width:20px;height:20px;object-fit:contain;display:block;}
+.footer img.icon{width:19px;height:19px;object-fit:contain;display:block;}
 </style>
 </head>
 <body>
@@ -55,23 +54,19 @@ body{margin:0;background:#fff8f5;display:flex;justify-content:center;font-family
 <script>
 const verses=[
 {t:"Confie no Senhor de todo o seu coração",r:"Provérbios 3:5"},
-{t:"Consagre ao Senhor tudo o que você faz, e os seus planos serão bem-sucedidos",r:"Provérbios 16:3"},
+{t:"Consagre ao Senhor tudo o que você faz",r:"Provérbios 16:3"},
 {t:"O Senhor é o meu pastor; de nada terei falta",r:"Salmos 23:1"},
 {t:"Não andem ansiosos por coisa alguma",r:"Filipenses 4:6-7"},
 {t:"Porque sou eu que conheço os planos que tenho para vocês",r:"Jeremias 29:11"},
 {t:"Não tema, pois estou com você",r:"Isaías 41:10"},
-{t:"Deus é o nosso refúgio e a nossa fortaleza",r:"Salmos 46:1"},
-{t:"Sabemos que Deus age em todas as coisas para o bem daqueles que o amam",r:"Romanos 8:28"},
-{t:"Porque Deus tanto amou o mundo que deu o seu Filho unigênito",r:"João 3:16"},
+{t:"Deus é o nosso refúgio e fortaleza",r:"Salmos 46:1"},
+{t:"Sabemos que Deus age para o bem",r:"Romanos 8:28"},
+{t:"Porque Deus amou o mundo",r:"João 3:16"},
 {t:"Tudo posso naquele que me fortalece",r:"Filipenses 4:13"}
 ];
 function getDay(){const n=new Date();const s=new Date(n.getFullYear(),0,0);return Math.floor((n-s)/(1000*60*60*24));}
-function load(){
-const v=verses[getDay()%verses.length];
-document.getElementById('vText').innerText=v.t+".";
-document.getElementById('vRef').innerText="- "+v.r;
-}
-function shareVerse(){const t=document.getElementById('vText').innerText+" "+document.getElementById('vRef').innerText;if(navigator.share){navigator.share({title:'Afetti',text:t});}else{navigator.clipboard.writeText(t);alert('Copiado!');}}
+function load(){const v=verses[getDay()%verses.length];document.getElementById('vText').innerText=v.t+".";document.getElementById('vRef').innerText="- "+v.r;}
+function shareVerse(){const t=document.getElementById('vText').innerText+" "+document.getElementById('vRef').innerText;if(navigator.share){navigator.share({text:t});}else{navigator.clipboard.writeText(t);alert('Copiado!');}}
 load();
 </script>
 </body>
