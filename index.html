@@ -5,39 +5,36 @@
 <title>Afetti - Mensagem do Dia</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
-*{box-sizing:border-box}
-body{margin:0;background:#fff8f5;display:flex;justify-content:center;font-family:Arial,sans-serif;}
+body{margin:0;background:#fff8f5;display:flex;justify-content:center;font-family:Arial,sans-serif;overflow:hidden;height:100vh;}
 .bg{position:fixed;inset:0;background:radial-gradient(ellipse at 10% 0%, #f7b9a5 0%, transparent 45%),radial-gradient(ellipse at 90% 100%, #f7b9a5 0%, transparent 45%),#fffaf7;z-index:-1;}
-.container{width:100%;max-width:420px;min-height:100vh;padding:8px 0;display:flex;flex-direction:column;align-items:center;}
-.logo{width:125px;height:125px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:8px 0 12px;box-shadow:0 2px 10px rgba(0,0,0,.08);}
-.logo img{width:88%;height:88%;object-fit:contain;border-radius:50%;}
-.card{background:#fff;width:92%;border-radius:22px;box-shadow:0 8px 18px rgba(0,0,0,.06);padding:14px 12px 10px;text-align:center;}
-.titleWrap{position:relative;border:1.5px solid #d4b368;border-radius:14px;padding:10px 44px;margin:0 2px 10px;}
-.leafL,.leafR{position:absolute;top:50%;width:36px}.leafL{left:-10px;transform:translateY(-50%)}.leafR{right:-10px;transform:translateY(-50%) scaleX(-1)}
-.title{font-family:'Cinzel',serif;color:#a67c2e;font-weight:700;font-size:18px;line-height:1.2;margin:0;}
-.bibleWrap{position:relative;width:100%;}
-.bibleWrap.bible{width:100%;display:block;border-radius:8px;}
-.verseOverlay{position:absolute;top:50%;left:50%;transform:translate(-10%,-50%);width:38%;min-height:70%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:8px;background:rgba(255,255,255,.92);border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,.1);}
-.verseText{font-family:Georgia,serif;font-size:12.5px;line-height:1.3;color:#2b1a0e;font-weight:700;text-align:center;}
-.verseRef{margin-top:6px;font-family:Georgia,serif;font-size:11px;color:#a67c2e;font-weight:800;}
-.btn{margin-top:10px;background:#e68a7f;color:#fff;border:none;padding:8px 20px;border-radius:18px;font-weight:700;font-size:13px;cursor:pointer;}
-.bottomBranches{position:relative;width:100%;height:28px;margin-top:8px;}
-.bottomBranches img{width:36px;position:absolute;top:50%}.bL{left:18px;transform:translateY(-50%)}.bR{right:18px;transform:translateY(-50%) scaleX(-1)}
-.footer{margin-top:10px;width:92%;background:#f9d9d5;border-radius:20px;padding:8px 10px;display:flex;justify-content:center;align-items:center;gap:6px;font-size:11px;color:#3a2222;}
-.footer a{color:#3a2222;text-decoration:none;font-weight:700;display:flex;align-items:center;gap:5px}
-.footer img.icon{width:19px;height:19px}
+.container{width:100%;max-width:420px;height:100vh;padding:4px 0 2px;display:flex;flex-direction:column;align-items:center;box-sizing:border-box;}
+.logo{width:128px;height:128px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px;margin-bottom:8px;flex-shrink:0;}
+.logo img{width:90%;height:90%;object-fit:contain;border-radius:50%;}
+.card{background:#fff;width:92%;border-radius:22px;box-shadow:0 8px 18px rgba(0,0,0,.06);padding:12px 10px 6px;text-align:center;flex-shrink:0;}
+.titleWrap{position:relative;border:1.5px solid #d4b368;border-radius:14px;padding:8px 40px;margin:0 2px 6px;}
+.leafL,.leafR{position:absolute;top:50%;width:34px}.leafL{left:-10px;transform:translateY(-50%)}.leafR{right:-10px;transform:translateY(-50%) scaleX(-1)}
+.title{font-family:'Cinzel',serif;color:#a67c2e;font-weight:700;font-size:17px;line-height:1.2;margin:0;}
+.bibleWrap{position:relative;width:100%;margin-top:2px;}
+.bibleWrap img.bible{width:100%;display:block;max-height:36vh;object-fit:contain;}
+/* VERSÍCULO DIRETO NA PÁGINA SEM FUNDO BRANCO - COMO ANTES */
+.verseOverlay{position:absolute;top:50%;left:68%;transform:translate(-50%,-50%);width:30%;height:70%;display:flex;flex-direction:column;justify-content:center;align-items:center;box-sizing:border-box;padding:0 4px;}
+.verseText{font-family:Georgia,serif;font-size:11px;line-height:1.25;color:#2b1a0e;text-align:center;font-weight:700;}
+.verseRef{display:block;margin-top:4px;font-family:Georgia,serif;font-size:10px;color:#a67c2e;font-weight:800;text-align:center;}
+.btn{margin-top:6px;background:#e68a7f;color:#fff;border:none;padding:6px 18px;border-radius:18px;font-weight:700;font-size:12px;cursor:pointer;}
+.bottomBranches{position:relative;width:100%;height:22px;margin-top:4px;}
+.bottomBranches img{width:32px;position:absolute;top:50%}.bL{left:18px;transform:translateY(-50%)}.bR{right:18px;transform:translateY(-50%) scaleX(-1)}
+.footer{margin-top:6px;width:92%;background:#f9d9d5;border-radius:20px;padding:6px 10px;display:flex;justify-content:center;align-items:center;gap:6px;font-size:10.5px;color:#3a2222;flex-shrink:0;}
+.footer a{color:#3a2222;text-decoration:none;font-weight:700;display:flex;align-items:center;gap:4px}
+.footer img.icon{width:18px;height:18px;}
 </style>
 </head>
 <body>
 <div class="bg"></div>
 <div class="container">
-<div class="logo"><img src="logo.png" alt="Afetti"></div>
+<div class="logo"><img src="logo.png"></div>
 <div class="card">
 <div class="titleWrap"><img class="leafL" src="ramo_dourado.png"><img class="leafR" src="ramo_dourado.png"><div class="title">• BOM DIA •<br>MENSAGEM DE HOJE</div></div>
-<div class="bibleWrap">
-<img class="bible" src="biblia.png" alt="Biblia">
-<div class="verseOverlay"><div class="verseText" id="vText"></div><span class="verseRef" id="vRef"></span></div>
-</div>
+<div class="bibleWrap"><img class="bible" src="biblia.png"><div class="verseOverlay"><div class="verseText" id="vText"></div><span class="verseRef" id="vRef"></span></div></div>
 <button class="btn" id="shareBtn">Compartilhar ❤️</button>
 <div class="bottomBranches"><img class="bL" src="ramo_dourado.png"><img class="bR" src="ramo_dourado.png"></div>
 </div>
@@ -47,43 +44,15 @@ body{margin:0;background:#fff8f5;display:flex;justify-content:center;font-family
 <a href="https://wa.me/5551995421753" target="_blank"><img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"> 51 995421753</a>
 </div>
 </div>
-
 <script>
-// LISTA 365 VERSICULOS - SEM REPETIR NO ANO
-const verses = [
-"Confie no Senhor de todo o seu coração|Provérbios 3:5","O Senhor é o meu pastor; de nada terei falta|Salmos 23:1","Tudo posso naquele que me fortalece|Filipenses 4:13","Não tema, pois estou com você|Isaías 41:10","Deus é o nosso refúgio e fortaleza|Salmos 46:1","Porque Deus amou o mundo de tal maneira|João 3:16","O choro pode durar uma noite, mas a alegria vem pela manhã|Salmos 30:5","Entrega o teu caminho ao Senhor, confia nele|Salmos 37:5","O Senhor é minha luz e minha salvação|Salmos 27:1","Sejam fortes e corajosos|Josué 1:9","O amor é paciente, o amor é bondoso|1 Coríntios 13:4","Alegrem-se na esperança, sejam pacientes na tribulação|Romanos 12:12","O Senhor te abençoe e te guarde|Números 6:24","Busquem primeiro o Reino de Deus|Mateus 6:33","Vinde a mim todos os que estão cansados|Mateus 11:28","A paz de Deus guardará o coração de vocês|Filipenses 4:7","Tudo coopera para o bem daqueles que amam a Deus|Romanos 8:28","Lancem sobre Ele toda a sua ansiedade|1 Pedro 5:7","O meu socorro vem do Senhor|Salmos 121:2","Deus é amor|1 João 4:8","A fé é a certeza daquilo que esperamos|Hebreus 11:1","O Senhor está perto dos que têm o coração quebrantado|Salmos 34:18","Clame a mim e eu responderei|Jeremias 33:3","A palavra de Deus é lâmpada para os meus pés|Salmos 119:105","O fruto do Espírito é amor, alegria e paz|Gálatas 5:22","O Senhor renova as suas misericórdias cada manhã|Lamentações 3:23","Nada poderá nos separar do amor de Deus|Romanos 8:39","Se Deus é por nós, quem será contra nós?|Romanos 8:31","Aquele que habita no esconderijo do Altíssimo|Salmos 91:1","O Senhor é a minha força e o meu escudo|Salmos 28:7","O amor nunca falha|1 Coríntios 13:8","Em tudo dai graças|1 Tessalonicenses 5:18","O Senhor dá força ao seu povo|Salmos 29:11","Bendize, ó minha alma, ao Senhor|Salmos 103:1","O Senhor está comigo, não temerei|Salmos 118:6","Cantai ao Senhor um cântico novo|Salmos 96:1","Se confessarmos os nossos pecados, Ele é fiel|1 João 1:9","Buscai e achareis|Mateus 7:7","Eu sou o caminho, a verdade e a vida|João 14:6","Eu sou a luz do mundo|João 8:12","Permaneçam em mim|João 15:4","Provai e vede que o Senhor é bom|Salmos 34:8","Como um pai se compadece de seus filhos|Salmos 103:13","Dêem graças ao Senhor porque Ele é bom|Salmos 107:1","Perto está o Senhor de todos os que o invocam|Salmos 145:18","O Senhor sustenta a todos os que caem|Salmos 145:14","Tudo quanto tem fôlego louve ao Senhor|Salmos 150:6","O temor do Senhor é o princípio da sabedoria|Provérbios 9:10","O coração do homem planeja o seu caminho|Provérbios 16:9","A resposta branda desvia o furor|Provérbios 15:1","O nome do Senhor é torre forte|Provérbios 18:10","O generoso prosperará|Provérbios 11:25","Há tempo para todo propósito|Eclesiastes 3:1","Melhor é serem dois do que um|Eclesiastes 4:9","Os que esperam no Senhor renovarão as suas forças|Isaías 40:31","Quando passares pelas águas estarei contigo|Isaías 43:2","Eu sei os planos que tenho para vocês|Jeremias 29:11","Bom é aguardar a salvação do Senhor|Lamentações 3:26","O justo viverá pela fé|Habacuque 2:4","O Senhor teu Deus está no meio de ti|Sofonias 3:17","Vós sois a luz do mundo|Mateus 5:14","A minha paz vos dou|João 14:27","No mundo tereis aflições, mas tende bom ânimo|João 16:33","Se alguém está em Cristo é nova criatura|2 Coríntios 5:17","Revesti-vos de toda a armadura de Deus|Efésios 6:11","O meu Deus suprirá todas as necessidades|Filipenses 4:19","Orem continuamente|1 Tessalonicenses 5:17","A palavra de Deus é viva e eficaz|Hebreus 4:12","Sem fé é impossível agradar a Deus|Hebreus 11:6","Jesus Cristo é o mesmo ontem, hoje e sempre|Hebreus 13:8","A oração do justo é poderosa|Tiago 5:16","Maior é o que está em vocês|1 João 4:4","O Senhor pelejará por vós|Êxodo 14:14","Até aqui nos ajudou o Senhor|1 Samuel 7:12","O Senhor é bom e a sua misericórdia dura para sempre|Salmos 100:5","Elevo os olhos para os montes|Salmos 121:1","O Senhor tem feito grandes coisas por nós|Salmos 126:3","Se o Senhor não edificar a casa|Salmos 127:1","Ele dá força ao cansado|Isaías 40:29","O Senhor te guiará continuamente|Isaías 58:11","Levanta-te e resplandece|Isaías 60:1"
-// Para chegar a 365, o código repete o ciclo automaticamente - você pode ir adicionando mais linhas iguais a essa
+const verses=[
+"Confie no Senhor de todo o seu coração|Provérbios 3:5","O Senhor é o meu pastor; de nada terei falta|Salmos 23:1","Tudo posso naquele que me fortalece|Filipenses 4:13","Não tema, pois estou com você|Isaías 41:10","Deus é o nosso refúgio e fortaleza|Salmos 46:1","Porque Deus amou o mundo de tal maneira|João 3:16","O choro pode durar uma noite, mas a alegria vem pela manhã|Salmos 30:5","Entrega o teu caminho ao Senhor|Salmos 37:5","O Senhor é minha luz e minha salvação|Salmos 27:1","Sejam fortes e corajosos|Josué 1:9","O amor é paciente, o amor é bondoso|1 Coríntios 13:4","Alegrem-se na esperança|Romanos 12:12","O Senhor te abençoe e te guarde|Números 6:24","Busquem primeiro o Reino de Deus|Mateus 6:33","Vinde a mim todos os que estão cansados|Mateus 11:28","A paz de Deus guardará o coração de vocês|Filipenses 4:7","Tudo coopera para o bem|Romanos 8:28","Lancem sobre Ele toda a sua ansiedade|1 Pedro 5:7","O meu socorro vem do Senhor|Salmos 121:2","Deus é amor|1 João 4:8","A fé é a certeza daquilo que esperamos|Hebreus 11:1","O Senhor está perto dos quebrantados|Salmos 34:18","Clame a mim e eu responderei|Jeremias 33:3","A palavra de Deus é lâmpada|Salmos 119:105","O fruto do Espírito é amor, alegria e paz|Gálatas 5:22","Alegrai-vos sempre no Senhor|Filipenses 4:4","O Senhor renova as misericórdias cada manhã|Lamentações 3:23","Nada nos separará do amor de Deus|Romanos 8:39","Se Deus é por nós, quem será contra nós?|Romanos 8:31","Aquele que habita no esconderijo do Altíssimo|Salmos 91:1","O Senhor é a minha força e o meu escudo|Salmos 28:7","O amor nunca falha|1 Coríntios 13:8","Em tudo dai graças|1 Tessalonicenses 5:18","O Senhor dá força ao seu povo|Salmos 29:11","Bendize, ó minha alma, ao Senhor|Salmos 103:1","O Senhor está comigo, não temerei|Salmos 118:6","Se confessarmos os nossos pecados|1 João 1:9","Buscai e achareis|Mateus 7:7","Eu sou o caminho, a verdade e a vida|João 14:6","Eu sou a luz do mundo|João 8:12","Permaneçam em mim|João 15:4","Provai e vede que o Senhor é bom|Salmos 34:8","Como um pai se compadece|Salmos 103:13","Dêem graças ao Senhor porque Ele é bom|Salmos 107:1","Perto está o Senhor de todos|Salmos 145:18","Tudo quanto tem fôlego louve|Salmos 150:6","O temor do Senhor é o princípio da sabedoria|Provérbios 9:10","O coração do homem planeja seu caminho|Provérbios 16:9","A resposta branda desvia o furor|Provérbios 15:1","O nome do Senhor é torre forte|Provérbios 18:10","O generoso prosperará|Provérbios 11:25","Há tempo para todo propósito|Eclesiastes 3:1","Melhor é serem dois do que um|Eclesiastes 4:9","Os que esperam no Senhor renovarão as forças|Isaías 40:31","Quando passares pelas águas|Isaías 43:2","Eu sei os planos que tenho para vocês|Jeremias 29:11","O justo viverá pela fé|Habacuque 2:4","Vós sois a luz do mundo|Mateus 5:14","A minha paz vos dou|João 14:27","No mundo tereis aflições, mas tende bom ânimo|João 16:33","Se alguém está em Cristo é nova criatura|2 Coríntios 5:17","Revesti-vos da armadura de Deus|Efésios 6:11","O meu Deus suprirá tudo|Filipenses 4:19","Orem continuamente|1 Tessalonicenses 5:17","A palavra de Deus é viva e eficaz|Hebreus 4:12","Sem fé é impossível agradar a Deus|Hebreus 11:6","Jesus Cristo é o mesmo ontem, hoje e sempre|Hebreus 13:8","A oração do justo é poderosa|Tiago 5:16","Maior é o que está em vocês|1 João 4:4","O Senhor pelejará por vós|Êxodo 14:14","Até aqui nos ajudou o Senhor|1 Samuel 7:12","Servi ao Senhor com alegria|Salmos 100:2","Elevo os olhos para os montes|Salmos 121:1","O Senhor tem feito grandes coisas|Salmos 126:3","Ele dá força ao cansado|Isaías 40:29","O Senhor te guiará continuamente|Isaías 58:11","Levanta-te e resplandece|Isaías 60:1"
 ];
-
-// Calcula dia do ano
-function getDayOfYear(){
-  const now = new Date();
-  const start = new Date(now.getFullYear(), 0, 0);
-  const diff = now - start;
-  return Math.floor(diff / (1000*60*60*24));
-}
-
-function carregarVersiculo(){
-  const dia = getDayOfYear();
-  const idx = dia % verses.length;
-  const partes = verses[idx].split('|');
-  document.getElementById('vText').innerText = partes[0] + ".";
-  document.getElementById('vRef').innerText = "- " + partes[1];
-}
-
-function compartilhar(){
-  const texto = document.getElementById('vText').innerText + " " + document.getElementById('vRef').innerText + " - Afetti Ateliê";
-  if(navigator.share){
-    navigator.share({title:'Mensagem do dia Afetti', text:texto}).catch(()=>{});
-  }else if(navigator.clipboard){
-    navigator.clipboard.writeText(texto).then(()=>alert('Versículo copiado! ❤️')).catch(()=>alert(texto));
-  }else{
-    alert(texto);
-  }
-}
-
-document.getElementById('shareBtn').addEventListener('click', compartilhar);
-carregarVersiculo();
+function getDay(){const n=new Date();const s=new Date(n.getFullYear(),0,0);return Math.floor((n-s)/86400000);}
+function load(){const i=getDay()%verses.length;const p=verses[i].split('|');document.getElementById('vText').innerText=p[0]+'.';document.getElementById('vRef').innerText='- '+p[1];}
+function share(){const t=document.getElementById('vText').innerText+' '+document.getElementById('vRef').innerText;if(navigator.share){navigator.share({text:t}).catch(()=>{});}else{navigator.clipboard.writeText(t).then(()=>alert('Copiado! ❤️')).catch(()=>alert(t));}}
+document.getElementById('shareBtn').addEventListener('click',share);
+load();
 </script>
 </body>
 </html>
